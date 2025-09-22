@@ -2,71 +2,82 @@
    基础样式重置和全局设置
    ========================================================================== */
 
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3;
+  color: #0056b3;
 }
 
 p {
-    text-indent: 2rem;
-    margin-bottom: 20px;
+  text-indent: 2em;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 p:last-of-type {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /* ==========================================================================
    页面头部样式
    ========================================================================== */
 
-body>header {
-    width: 100%;
-    height: 8%;
-    background-color: #f6f6f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body > header {
+  min-height: 5vh;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body>header h1 {
-    font-size: 2rem;
-    margin: 0;
-    font-weight: bold;
-    text-align: center;
-    color: black;
+body > header h1 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+body > header nav {
+  position: absolute;
+  right: 0;
+}
+
+nav a {
+  color: #04669e;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin: 0.5rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 /* ==========================================================================
-   主布局容器 - 使用CSS Grid
+   主布局容器
    ========================================================================== */
 
-.layout-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 10vw 1fr;
-    grid-template-areas: "menu content";
-    background: white;
-    min-height: 100vh;
-    justify-items: center;
+#container {
+  display: grid;
+  grid-template-columns: minmax(10em, 10vw) 1fr;
+  grid-template-areas: "menu content";
+  gap: 1rem;
+  background: white;
+  min-height: 100vh;
 }
 
 /* ==========================================================================
@@ -74,253 +85,163 @@ body>header h1 {
    ========================================================================== */
 
 #layout-menu {
-    grid-area: menu;
-    position: sticky;
-    top: 0;
-    background: #f6f6f6;
-    border: 1px solid #ddd;
-    padding: 0.5rem 8px;
-    height: 100vh;
-    min-width: 8rem;
-    width: 100%;
-    /* overflow-y: auto; */
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  grid-area: menu;
+  position: sticky;
+  top: 0;
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  padding: 0.5em 0.5em;
+  height: 100vh;
+  /* min-width: 10em; */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu-item {
-    margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .menu-item a {
-    display: block;
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    color: #333;
-    font-weight: 500;
+  display: block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  color: #333;
+  font-weight: 500;
 }
 
 .menu-item a:hover {
-    background-color: #e9ecef;
-    color: #007bff;
-    transform: translateX(2px);
+  background-color: #e9ecef;
+  color: #007bff;
+  transform: translateX(2px);
 }
-
-/* ==========================================================================
-   个人信息区域样式
-   ========================================================================== */
-
-.profile-section {
-    padding: 2rem 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    /* flex-wrap: wrap; */
-    gap: 1rem;
-    font-size: 1.2rem;
-    line-height: 2;
-}
-
-.profile-header {
-    height: 80px;
-
-}
-
-.profile-photo {
-    width: 220px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
-}
-
-.profile-photo:hover {
-    transform: scale(1.02);
-}
-
-.profile-info {
-    flex-shrink: 0;
-    min-width: 400px;
-    text-align: left;
-    margin-top: 1rem;
-}
-
-.profile-name {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 0.3rem;
-}
-
-.profile-positions {
-    max-width: 100%;
-    color: #444;
-    margin-top: auto;
-}
-
-.research-area nav {
-    display: flex;
-    /* flex-wrap: wrap; */
-    gap: 1rem;
-    margin-top: auto;
-}
-
-.research-area {
-    flex-shrink: 0;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    height: 310px;
-    max-width: 500px;
-}
-
-.research-area h2 {
-    color: #2c3e50;
-    border: 0;
-    font-size: 2rem;
-    margin: 0;
-    height: 80px;
-    font-weight: 600;
-}
-
-.research-area ul {
-    padding-left: 0;
-    margin-bottom: 5px;
-}
-
 
 /* ==========================================================================
    主内容区域
    ========================================================================== */
 
 #layout-content {
-    grid-area: content;
-    background: white;
-    text-align: left;
-    padding: 1rem;
-    font-size: 1.25rem;
-    max-width: 1500px;
+  grid-area: content;
+  background: white;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.25rem;
+  max-width: 1500px;
+  justify-self: center;
 }
 
 section {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 section:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 section h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 0.5rem;
-    /* margin-bottom: 1rem; */
-    font-weight: 600;
-    font-size: 2rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 0.5rem;
+  /* margin-bottom: 1rem; */
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 .sticky-heading {
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 10;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
 }
 
 /* 列表样式 */
 .list-section ol {
-    list-style: none;
-    counter-reset: paper-counter;
-    padding-left: 0;
-    margin-left: 0;
+  list-style: none;
+  counter-reset: paper-counter;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .list-section ol li {
-    counter-increment: paper-counter;
-    position: relative;
-    padding-left: 3rem;
-    margin-bottom: 1rem;
+  counter-increment: paper-counter;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1rem;
 }
 
 .list-section ol li::before {
-    content: "[" counter(paper-counter) "]";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: bold;
-    min-width: 2.5rem;
-
+  content: "[" counter(paper-counter) "]";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
 }
 
 /* ==========================================================================
-   个人信息区域样式 - 使用Flexbox
+   个人信息区域样式
    ========================================================================== */
 
-.profile-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 5rem;
-    width: 100%;
-    flex-wrap: wrap;
-    padding: 1rem 2rem;
-    align-items: center;
+#profile {
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+  /* flex-wrap: wrap; */
 }
 
-.profile-image {
-    flex-shrink: 0;
+#profile h2 {
+  height: 80px;
+  border: 0;
+  margin: 0;
+  margin-top: 0.5rem;
+  font-size: 1.75em;
+  font-weight: 700;
+  color: #2c3e50;
 }
 
-.profile-photo {
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+#profile-info h2 span {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-left: 1rem;
+  font-weight: 600;
 }
 
-.profile-photo:hover {
-    transform: scale(1.02);
+#profile ul {
+  padding-left: 0.5em;
+  margin: 0;
 }
 
-.profile-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333333;
+#profile li::marker {
+  content: "";
 }
 
-.profile-links {
-    position: absolute;
-    right: 0;
+#profile img {
+  max-width: 240px;
+  min-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.profile-link {
-    color: #04669e;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    margin: 0.5rem;
-    /* padding: 0.3rem 0.5rem; */
-    border-radius: 4px;
-    /* background-color: #f8f9fa; */
-
+#profile img:hover {
+  transform: scale(1.02);
 }
 
-.profile-link:hover {
-    color: #0056b3;
-    /* background-color: #e9ecef; */
-    text-decoration: underline;
+#profile-info {
+  flex-shrink: 0;
+  text-align: left;
+  max-width: 480px;
 }
 
-.position-title {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-left: 1rem;
-    font-weight: 600;
+#researchArea {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
 }
 
 /* ==========================================================================
@@ -328,22 +249,22 @@ section h2 {
    ========================================================================== */
 
 .section-content {
-    line-height: 1.8;
-    text-align: justify;
+  line-height: 1.8;
+  text-align: justify;
 }
 
 .project-section li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .project-section li span {
-    flex-grow: 0;
+  flex-grow: 0;
 }
 
 .project-section li span:last-child {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 /* ==========================================================================
@@ -351,95 +272,89 @@ section h2 {
    ========================================================================== */
 
 .recruitment-notice {
-    /* margin: 2rem 0; */
-    padding: 1.5rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-    border-left: 4px solid #007bff;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+  /* margin: 2rem 0; */
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  border-left: 4px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
 }
 
 .recruitment-text {
-    text-align: center;
-    margin-bottom: 0;
-    font-size: 1.8rem;
-    line-height: 1.4;
-    color: #2c3e50;
-    font-weight: 600;
+  text-indent: 0;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .recruitment-text a {
-    color: #007bff;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  color: #007bff;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .recruitment-text a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 /* ==========================================================================
    多列布局样式
    ========================================================================== */
 .graduates-employment {
-    column-count: 2;
-    column-gap: 2rem;
-    column-fill: balance;
+  column-count: 2;
+  column-gap: 2rem;
+  column-fill: balance;
 }
 
 .graduates-employment ul {
-    margin: 0;
-    padding-left: 1.5rem;
+  margin: 0;
+  padding-left: 1.5rem;
 }
 
 .graduates-employment li {
-    break-inside: avoid;
-    margin-bottom: 0.5rem;
-    page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 0.5rem;
+  page-break-inside: avoid;
 }
 
 .graduates-employment li {
-    margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 /* ==========================================================================
    响应式设计 - 媒体查询
    ========================================================================== */
 
-/* 小屏幕设备 (手机) - 768px以下 */
-@media screen and (max-width: 768px) {
+/* 中小屏幕设备 (平板和手机) - 1280px以下 */
+@media screen and (max-width: 1280px) {
+  /* 隐藏侧边栏 */
+  #layout-menu {
+    display: none;
+  }
 
-    /* 隐藏侧边栏 */
-    #layout-menu {
-        display: none;
-    }
+  /* 主内容区占满全宽 */
+  #container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "content";
+  }
 
-    /* 主内容区占满全宽 */
-    .layout-container {
-        grid-template-columns: 1fr;
-        grid-template-areas: "content";
-    }
+  #layout-content {
+    width: 100%;
+    padding: 0.5rem;
+  }
 
-    #layout-content {
-        width: 100%;
-        padding: 0.5rem;
-    }
+  body > header nav {
+    position: static;
+    margin-left: auto;
+  }
 
-
-}
-
-/* 大屏幕设备 (平板和桌面) - 769px及以上 */
-@media screen and (min-width: 769px) {
-
-    /* 确保侧边栏显示 */
-    #layout-menu {
-        display: block;
-    }
-
-    /* 保持原有的网格布局 */
-    .layout-container {
-        grid-template-columns: 10vw 1fr;
-        grid-template-areas: "menu content";
-    }
+  body > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

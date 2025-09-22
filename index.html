@@ -12,16 +12,16 @@
 <body>
 	<header>
 		<h1>Tao Wu (吴涛)'s Homepage</h1>
-		<nav class="profile-links">
-						<a href="https://faculty.cqupt.edu.cn/wutao/en/index.html" target="_blank" class="profile-link">[学校网站主页]</a>
-						<a href="education.html" class="profile-link">[产学研成果]</a>
-						<a href="English.html" class="profile-link">[English homepage]</a>
-					</nav>
+		<nav>
+			<a href="https://faculty.cqupt.edu.cn/wutao/en/index.html" target="_blank">[学校网站主页]</a>
+			<a href="education.html">[产学研成果]</a>
+			<a href="English.html">[English homepage]</a>
+		</nav>
 	</header>
-	<div class="layout-container">
+	<div id="container">
 		<aside id="layout-menu">
 			<ul class="menu-list">
-				<li class="menu-item"><a href="index.html">首页</a></li>
+				<li class="menu-item"><a href="#">首页</a></li>
 				<li class="menu-item"><a href="#guidelines">报考须知</a></li>
 				<li class="menu-item"><a href="#researchArea">主要研究领域</a></li>
 				<li class="menu-item"><a href="#aboutMe">个人简介</a></li>
@@ -37,24 +37,22 @@
 
 		</aside>
 		<main id="layout-content">
-			<section class="profile-section">
-				<img src="images/wutaozhengjian.png" alt="吴涛教授照片" class="profile-photo" />
-				<div class="profile-info">
-					<header class="profile-header">
-						<span class="profile-name">吴涛</span><span class="position-title">文峰教授 博(硕)导</span>
-					</header>
-					<div class="profile-details">
-						<div class="profile-positions">
-							重庆市学术技术带头人后备人选<br />
-							重庆市网络与信息安全技术工程实验室<wbr/>常务副主任<br />
-							重庆邮电大学前沿交叉研究院副院长<br />
-							重庆邮电大学网络空间安全系主任<br />
-							重庆邮电大学网络空间与智能安全重点实验室<wbr/>副主任<br />
-							重庆邮电大学-重庆中国三峡博物馆智慧文博联合<wbr/>实验室主任<br />
-						</div>
-					</div>
+			<section id="profile">
+				<div>
+					<img src="images/wutaozhengjian.png" alt="吴涛教授照片" />
 				</div>
-				<div class="research-area" id="researchArea">
+				<div id="profile-info">
+					<h2>吴涛<span name="position">文峰教授 博(硕)导</span></h2>
+					<ul id="profile-positions">
+						<li>重庆市学术技术带头人后备人选</li>
+						<li>重庆市网络与信息安全技术工程实验室<wbr/>常务副主任</li>
+						<li>重庆邮电大学前沿交叉研究院副院长</li>
+						<li>重庆邮电大学网络空间安全系主任</li>
+						<li>重庆邮电大学网络空间与智能安全重点实验室<wbr/>副主任</li>
+						<li>重庆邮电大学-重庆中国三峡博物馆<wbr/>智慧文博联合<wbr/>实验室主任</li>
+					</ul>
+				</div>
+				<div id="researchArea">
 					<h2>主要研究领域</h2>
 					<ul>
 						<li><strong>图解耦表征理论与方法、图表示学习</strong></li>
@@ -62,7 +60,7 @@
 						<li><strong>图基础模型</strong>: 基础单元、模型架构、预训练与微调</li>
 						<li><strong>图学习模型的图像内容识别、知识推理等应用</strong></li>
 					</ul>
-			
+
 				</div>
 			</section>
 
@@ -86,10 +84,19 @@
 				<h2 class="sticky-heading">个人简介</h2>
 				<article class="section-content">
 					<p>
-						主要从事人工智能安全、对抗鲁棒性、图深度学习、图基础模型、知识工程与知识计算等方向的研究。主持承担国家自然科学基金面上和青年项目、国家重点研发计划子课题、重庆市自然科学基金创新发展联合基金重点项目、重庆市教委科学技术研究计划重点项目、重庆市自然科学基金面上项目、重庆市技术创新与应用发展面上项目等科研项目10余项，已在IEEE TBD、IEEE TCSVT、IEEE TIE、IEEE IoTJ、Pattern Recognition、Information Sciences、计算机学报、自动化学报、通信学报、电子学报等国内外高水平期刊和会议上发表学术论文60余篇，其中中科院SCI一/二区及CCF A/B类高水平期刊论文40余篇。出版《安全可信图学习方法与应用》等专著教材2部，申请国家发明专利20余件（授权专利14件，实现转让7件），登记软件著作权3 项。研究形成了面向开放环境的图深度智能系统安全防控理论与可信知识计算关键技术，相关成果应用于智能电网、智慧文博等领域。荣获中国产学研合作创新成果奖一等奖、四川省科技进步二等奖、川渝科技学术大会优秀论文奖、国际期刊Knowledge-Based Systems（KBS）最佳审稿人奖、重庆邮电大学十佳青年教师奖、重庆邮电大学优秀教师奖、重庆邮电大学优秀共产党员奖等。同时，负责的网络空间安全系获重庆邮电大学优秀基层教学组织奖，指导学生获重庆市优秀本科毕业论文奖等。
+						主要从事人工智能安全、对抗鲁棒性、图深度学习、图基础模型、知识工程与知识计算等方向的研究。主持承担国家自然科学基金面上和青年项目、国家重点研发计划子课题、重庆市自然科学基金创新发展联合基金重点项目、重庆市教委科学技术研究计划重点项目、重庆市自然科学基金面上项目、重庆市技术创新与应用发展面上项目等科研项目10余项，已在IEEE
+						TBD、IEEE TCSVT、IEEE TIE、IEEE IoTJ、Pattern Recognition、Information
+						Sciences、计算机学报、自动化学报、通信学报、电子学报等国内外高水平期刊和会议上发表学术论文60余篇，其中中科院SCI一/二区及CCF
+						A/B类高水平期刊论文40余篇。出版《安全可信图学习方法与应用》等专著教材2部，申请国家发明专利20余件（授权专利14件，实现转让7件），登记软件著作权3
+						项。研究形成了面向开放环境的图深度智能系统安全防控理论与可信知识计算关键技术，相关成果应用于智能电网、智慧文博等领域。荣获中国产学研合作创新成果奖一等奖、四川省科技进步二等奖、川渝科技学术大会优秀论文奖、国际期刊Knowledge-Based
+						Systems（KBS）最佳审稿人奖、重庆邮电大学十佳青年教师奖、重庆邮电大学优秀教师奖、重庆邮电大学优秀共产党员奖等。同时，负责的网络空间安全系获重庆邮电大学优秀基层教学组织奖，指导学生获重庆市优秀本科毕业论文奖等。
 					</p>
 					<p>
-						任中国电子学会（CIE）网络空间安全专家委员会委员、中国图象图形学学会（CSIG）数字媒体取证与安全专业委员会委员、中国人工智能学会（CAAI）社会计算与社会智能专委会委员、中国中文信息学会（CIPS）大数据安全与隐私计算专业委员会委员以及重庆中国三峡博物馆学术委员会委员。任Journal of Data Science and Intelligent Systems期刊编委，及IEEE TNNLS，IEEE TKDE，IEEE TIFS，IEEE TCYB，IEEE TBD, IEEE ETC，IEEE T SYST MAN CY-S等期刊论文评审专家、中国人工智能学会吴文俊人工智能科学技术奖网评专家、国家自然科学基金项目网评专家，以及Complex Networks 2023程序委员会委员（PC Member）、CSE2024（The 3rd International Conference on Cyberspace Simulation and Evaluation）、CAAI第八届全国大数据与社会计算学术会议（BDSC2023）、CAAI BDSC 2024、BDSC 2025程序委员会委员等。
+						任中国电子学会（CIE）网络空间安全专家委员会委员、中国图象图形学学会（CSIG）数字媒体取证与安全专业委员会委员、中国人工智能学会（CAAI）社会计算与社会智能专委会委员、中国中文信息学会（CIPS）大数据安全与隐私计算专业委员会委员以及重庆中国三峡博物馆学术委员会委员。任Journal
+						of Data Science and Intelligent Systems期刊编委，及IEEE TNNLS，IEEE TKDE，IEEE TIFS，IEEE TCYB，IEEE TBD, IEEE
+						ETC，IEEE T SYST MAN CY-S等期刊论文评审专家、中国人工智能学会吴文俊人工智能科学技术奖网评专家、国家自然科学基金项目网评专家，以及Complex Networks 2023程序委员会委员（PC
+						Member）、CSE2024（The 3rd International Conference on Cyberspace Simulation and
+						Evaluation）、CAAI第八届全国大数据与社会计算学术会议（BDSC2023）、CAAI BDSC 2024、BDSC 2025程序委员会委员等。
 					</p>
 				</article>
 			</section>
@@ -216,7 +223,8 @@
 								Systems(中科院SCI一区TOP, IF=8.838)</b>, 2023, 263: 110282.
 						</li>
 						<li>Jun Liu, Haoyu Jin, Haihui Huang, Guangxia Xu, <b>Tao Wu</b>, Mingpeng Chen. Aliasing black box
-							adversarial attack with joint self-attention distribution and confidence probability. <b>Expert Systems With
+							adversarial attack with joint self-attention distribution and confidence probability. <b>Expert Systems
+								With
 								Applications(中科院SCI一区TOP, IF=8.5)</b>, 2023, 214:119110</li>
 						<li>Zhao Wu, Chao Wang*, Linyun Xiong, Ruiheng Li, Tao Wu*, Huangqing Zhang.
 							A Smart Socket for
@@ -393,7 +401,7 @@
 				</article>
 			</section>
 
-			<section id="ct10" class="content-section list-section">
+			<section id="report" class="content-section list-section">
 				<h2 class="sticky-heading">学术会议、报告情况</h2>
 				<article class="section-content">
 					<ol>
@@ -411,7 +419,7 @@
 				</article>
 			</section>
 
-			<section id="ct11" class="content-section list-section">
+			<section id="graduates-employment" class="content-section list-section">
 				<h2 class="sticky-heading">毕业生就业情况</h2>
 				<article class="section-content">
 					<div class="graduates-employment">

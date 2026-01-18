@@ -32,25 +32,29 @@ p:last-of-type {
    页面头部样式
    ========================================================================== */
 
-body > header {
+header {
   min-height: 5vh;
   background-color: #f6f6f6;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 }
 
-body > header h1 {
+header h1 {
   font-size: 2em;
   margin: 0;
+  margin-left: 10px;
   font-weight: bold;
-  text-align: center;
+  /* text-align: center; */
   color: black;
+  flex: 2 0 auto;
 }
 
-body > header nav {
-  position: absolute;
-  right: 0;
+header nav {
+  text-align: right;
+  flex: 1 0 auto;
 }
 
 nav a {
@@ -73,11 +77,13 @@ nav a:hover {
 
 #container {
   display: grid;
-  grid-template-columns: minmax(10em, 10vw) 1fr;
-  grid-template-areas: "menu content";
-  gap: 1rem;
+  /* 移动优先：默认单列，菜单在内容之上 */
+  grid-template-columns: 1fr;
+  grid-template-areas: "content";
   background: white;
   min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -85,15 +91,7 @@ nav a:hover {
    ========================================================================== */
 
 #layout-menu {
-  grid-area: menu;
-  position: sticky;
-  top: 0;
-  background: #f6f6f6;
-  border: 1px solid #ddd;
-  padding: 0.5em 0.5em;
-  height: 100vh;
-  /* min-width: 10em; */
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  display: none;
 }
 
 .menu-list {
@@ -129,7 +127,7 @@ nav a:hover {
   grid-area: content;
   background: white;
   text-align: left;
-  padding: 1rem;
+  padding: 0 1rem;
   font-size: 1.25rem;
   max-width: 1500px;
   justify-self: center;
@@ -186,17 +184,11 @@ section h2 {
    个人信息区域样式
    ========================================================================== */
 
-#profile {
-  display: flex;
-  justify-content: space-around;
-  gap: 1em;
-  /* flex-wrap: wrap; */
-}
-
 #profile h2 {
   height: 80px;
   border: 0;
   margin: 0;
+  padding: 0;
   margin-top: 0.5rem;
   font-size: 1.75em;
   font-weight: 700;
@@ -231,17 +223,52 @@ section h2 {
   transform: scale(1.02);
 }
 
+#profile {
+  display: flex;
+  /* 允许内容换行，这是响应式的关键 */
+  flex-wrap: wrap;
+  justify-content: center; /* 小屏居中 */
+  gap: 2rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+}
+
+/* 图片容器 */
+#profile > div:first-child {
+  flex: 0 0 auto; /* 不放大也不缩小 */
+}
+
+/* 个人信息文本区域 */
 #profile-info {
-  flex-shrink: 0;
+  flex: 1 1 350px; /* 基础宽度 350px，允许放大 */
   text-align: left;
-  max-width: 480px;
+  /* 移除 max-width 限制，让 flex 控制 */
+  min-width: 300px;
 }
 
 #researchArea {
-  flex-shrink: 0;
+  flex: 1 1 350px; /* 基础宽度 350px，允许放大 */
   display: flex;
   flex-direction: column;
-  max-width: 450px;
+  min-width: 300px;
+}
+
+/* 在这里添加针对 researchArea 内部列表的分栏控制 */
+#researchArea ul {
+  /* 当空间足够时（例如折行后铺满整行），启用多列布局 */
+  column-width: 300px; /* 每列最小宽度，浏览器会自动计算列数 */
+  column-gap: 2rem; /* 列间距 */
+  width: 100%; /* 确保占用父容器所有宽度 */
+  margin-top: 0.5rem;
+}
+
+#researchArea li {
+  /* 防止列表项内部断裂到下一列 */
+  break-inside: avoid-column;
+  page-break-inside: avoid;
+  margin-bottom: 0.5rem;
+  /* 确保列表项内容对齐美观 */
+  text-align: left;
 }
 
 /* ==========================================================================
@@ -329,32 +356,84 @@ section h2 {
    响应式设计 - 媒体查询
    ========================================================================== */
 
-/* 中小屏幕设备 (平板和手机) - 1280px以下 */
-@media screen and (max-width: 1280px) {
-  /* 隐藏侧边栏 */
-  #layout-menu {
-    display: none;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-  /* 主内容区占满全宽 */
+/* 大屏幕 - 1024px以上 */
+@media screen and (min-width: 1024px) {
   #container {
-    grid-template-columns: 1fr;
-    grid-template-areas: "content";
+    /* 桌面端：恢复双列布局，左侧固定 240px，右侧自适应 */
+    grid-template-columns: minmax(10em, 10vw) 1fr;
+    grid-template-areas: "menu content";
+    gap: 2rem;
   }
 
+  #layout-menu {
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border-bottom: none;
+    border-right: 1px solid #ddd;
+    overflow-y: auto; /* 内容过多时垂直滚动 */
+  }
+
+  .menu-list {
+    display: block; /* 桌面端：恢复垂直列表 */
+  }
+
+  .menu-item a {
+    margin-bottom: 5px;
+  }
   #layout-content {
-    width: 100%;
-    padding: 0.5rem;
+    padding: 2rem 3rem; /* 桌面端增加呼吸感 */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header h1 {
+    text-align: center;
+    margin: 0;
   }
 
-  body > header nav {
-    position: static;
-    margin-left: auto;
+  header nav {
+    position: absolute;
+    right: 0;
+  }
+}
+
+/* 针对极小屏幕的优化 */
+@media screen and (max-width: 768px) {
+  header h1 {
+    text-align: center;
+    margin: 0;
   }
 
-  body > header {
-    display: flex;
+  #profile {
     flex-direction: column;
     align-items: center;
+    /* 缩小垂直间距：原为 2rem */
+    gap: 1rem;
+  }
+
+  /* 手机端取消标题的固定高度(原为80px)，消除多余空白 */
+  #profile h2 {
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  #profile-info,
+  #researchArea {
+    flex: initial;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* 手机屏幕下强制单列，防止太拥挤 */
+  #researchArea ul {
+    column-width: auto;
+    columns: 1;
   }
 }

@@ -1,11 +1,25 @@
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/index.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/700.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc/index.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc/700.css");
+
 /* ==========================================================================
    基础样式重置和全局设置
    ========================================================================== */
 
 body {
-  line-height: 1.6;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "思源宋体", "Songti SC", "SimSun", serif;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
   color: #333;
   background-color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Noto Sans SC", "Source Han Sans SC", "思源黑体", "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.4;
 }
 
 a {
@@ -60,6 +74,7 @@ header nav {
 nav a {
   color: #04669e;
   text-decoration: none;
+  font-family: "Noto Sans SC", "Source Han Sans SC", "思源黑体", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: 500;
   transition: color 0.3s ease;
   margin: 0.5rem;
@@ -110,6 +125,7 @@ nav a:hover {
   border-radius: 4px;
   transition: all 0.3s ease;
   color: #333;
+  font-family: "Noto Sans SC", "Source Han Sans SC", "思源黑体", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: 500;
 }
 
@@ -170,6 +186,7 @@ section h2 {
   position: relative;
   padding-left: 3rem;
   margin-bottom: 1rem;
+  line-height: 1.7;
 }
 
 .list-section ol li::before {

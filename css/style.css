@@ -1,3 +1,8 @@
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/index.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/700.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc/index.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc/700.css");
+
 ol {
 	list-style: decimal;
 	/* 移除默认的序号样式 */
@@ -39,7 +44,7 @@ ol li::before {
 }
 
 .section {
-	line-height: 32px;
+	line-height: 1.8em;
 	width: 98%;
 	text-align: justify;
 }
@@ -53,7 +58,9 @@ table#tlayout {
 
 body {
 	background: white;
-	font-family: Georgia, serif;
+	font-family: "Noto Serif SC", "Source Han Serif SC", "思源宋体", "Songti SC", "SimSun", Georgia, serif;
+	line-height: 1.8;
+	letter-spacing: 0.02em;
 	padding-bottom: 8px;
 	margin: 0;
 }
@@ -64,6 +71,7 @@ body {
 	padding-top: 0.5em;
 	padding-left: 8px;
 	padding-right: 8px;
+	font-family: "Noto Sans SC", "Source Han Sans SC", "思源黑体", "PingFang SC", "Microsoft YaHei", sans-serif;
 	font-size: 1.0em;
 	width: 150px;
 	white-space: nowrap;
@@ -166,11 +174,12 @@ h1,
 h2,
 h3 {
 	color: #527bbd;
+	font-family: "Noto Sans SC", "Source Han Sans SC", "思源黑体", "PingFang SC", "Microsoft YaHei", sans-serif;
 	margin-top: 0.7em;
 	margin-bottom: 0.3em;
 	padding-top: 0.5em;
 	padding-bottom: 0.2em;
-	line-height: 1.0;
+	line-height: 1.4;
 }
 
 h1 {
@@ -196,7 +205,7 @@ p {
 	margin-top: 0.0em;
 	margin-bottom: 0.8em;
 	padding: 0;
-	line-height: 1.3;
+	line-height: 1.8;
 }
 
 pre {
@@ -273,7 +282,7 @@ dd p {
 /* 优化段落格式 */
 p {
     font-size: 25px;  /* 增大字体大小 */
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 20px; /* 增加段落之间的间距 */
     color: #000000;  /* 设置字体颜色为黑色 */
 }

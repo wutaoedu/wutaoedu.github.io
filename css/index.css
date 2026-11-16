@@ -1,7 +1,7 @@
-@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/index.css");
-@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc/700.css");
-@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc/index.css");
-@import url("https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc/700.css");
+@import url("https://fastly.jsdelivr.net/npm/@fontsource/noto-serif-sc/index.css");
+@import url("https://fastly.jsdelivr.net/npm/@fontsource/noto-serif-sc/700.css");
+@import url("https://fastly.jsdelivr.net/npm/@fontsource/noto-sans-sc/index.css");
+@import url("https://fastly.jsdelivr.net/npm/@fontsource/noto-sans-sc/700.css");
 
 /* ==========================================================================
    基础样式重置和全局设置
